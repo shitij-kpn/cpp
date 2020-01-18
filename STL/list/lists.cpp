@@ -1,5 +1,5 @@
 #include <iostream>
-#include <algorithm>
+#include <list>
 
 using namespace std;
 
@@ -8,6 +8,7 @@ using namespace std;
 #define ll long long
 #define vi vector<int>
 #define vl vector<ll> 
+#define m map<int,int>
 #define sz(a) int((a).size())
 #define tr(c,i) for(typeof((c)) i = (c).begin(); i != (c).end(); i++)
 
@@ -19,19 +20,23 @@ int main(){
     // for writing output to output.txt
     freopen("output.txt", "w", stdout);
     #endif
-    
-    ll m , n;
 
-    cin>>m>>n;
+    list<pair<int,string> > table;
+    int x;
+    string s;
+    for(int i=0;i<10;i++){
+    	cin>>x>>s;
 
-    ll a[n];
-
-    for(ll i=0 ; i<n ; i++){
-    	cin>>a[i];
-    	cout<<a[i]<<endl;
+    	table.push_back(make_pair(x,s));
     }
 
-    cout<<binary_search(a, a + 4, 5);
-    
+    int sum{};
+    for(auto i : table){
+    	sum += sizeof(i.first);
+    }
+
+	for(auto i : table){
+		cout<<i.first<<"    "<<i.second<<endl;
+	}    
     return 0;
 }
