@@ -36,4 +36,21 @@ public:
 
 
 
-//optimised version
+//optimised version(sliding window)
+
+class Solution {
+public:
+    int lengthOfLongestSubstring(string s) {
+        int len = 0;
+        int a[128]={0};
+        if(s.empty()){
+            return 0;
+        }
+        for(int i=0,j=0;j<s.size();j++){
+            i = max(a[s[j]] , i);
+            len = max(len , j-i+1);
+            a[s[j]] = j+1;
+        }
+        return len;
+    }
+};
