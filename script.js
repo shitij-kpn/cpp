@@ -6,7 +6,7 @@ url = 'http://codeforces.com/contest/1256/problem/C'
 
 let getTestCaseFromProblemHtml = (dir, html) => {
 
-  fs.copyFileSync(`${dir}/../template.cpp`, `${dir}/sol.cpp`);
+  fs.copyFileSync(`${dir}/../../../template.cpp`, `${dir}/sol.cpp`);
   data = [];
   const $ = cheerio.load(html);
   $('div.input pre').each((i, elem) => {
