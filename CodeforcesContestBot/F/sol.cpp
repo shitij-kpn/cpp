@@ -25,14 +25,16 @@ void solve() {
             cin >> v[i][j];
         }
     }
+    for (auto i : v) {
+        for (int j : i) {
+            cout << j << " ";
+        }
+        cout << endl;
+    }
 }
 
 int main() {
     fast;
-    long long T;
-    cin >> T;
-    while (T--) {
-        solve();
-    }
+    solve();
     return 0;
 }
