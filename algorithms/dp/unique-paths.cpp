@@ -1,6 +1,6 @@
 //https://leetcode.com/problems/unique-paths
 
-
+//2 state
 class Solution {
 public:
     int uniquePaths(int m, int n) {
